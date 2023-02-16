@@ -3,18 +3,15 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"; //Import
 import "leaflet/dist/leaflet.css";
 import L from 'leaflet';
 
+
 const markerIcon = L.icon({
   iconUrl: './newIcon.png',
-  iconSize: [20, 30]
+  iconSize: [20, 25]
 });
 
 
 
-////////
-///////////////
-///////////
-///////
-// START AGAIN FROM 12:02
+
 
 
 
@@ -22,11 +19,12 @@ const englandPos = [52.90330510839568, -1.1862272800848968];
 
 
 
-function Maps() {
+function Maps(props) {
+  const { markerPosition } = props;
+
   return (
-    <div>
       
-      <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+      <div >
         <MapContainer
           center={englandPos}
           zoom={6}
@@ -34,10 +32,7 @@ function Maps() {
           style={{
             width: '70vw',
             height: '85vh',
-            
-            
           }}
-
         >
 
           <TileLayer
@@ -45,24 +40,22 @@ function Maps() {
           url="https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=Nmi7XJ7V5CNH8umtJfFQ"
           />
 
+
+        {markerPosition && (
           <Marker 
-            position={englandPos}
+            position={markerPosition || [52.90330510839568, -1.1862272800848968]}
             icon={markerIcon}
           >
             <Popup>
               ahahahah mate
             </Popup>
           </Marker>
-
+        )}
 
         </MapContainer>
       </div>
 
 
-
-
-
-    </div>
   )
 }
 
