@@ -13,11 +13,7 @@ import PageThree from './pages/PageThree';
 
 function App() {
   return (
-    <div className="App">
-
-      {/* <React.Fragment>
-        <NavBar />
-      </React.Fragment> */}
+    <div className="App" >
 
     <React.StrictMode>
         <Router>
