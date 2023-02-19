@@ -70,7 +70,8 @@ function Maps(props) {
               click: () => handleShow()
             }}
           >
-
+          
+      
            
         <Modal show={showModal} onHide={handleClose} >
           <Modal.Header closeButton>
@@ -97,6 +98,7 @@ function Maps(props) {
               </div>
           </Modal.Body>
         </Modal>
+        
 
             
 

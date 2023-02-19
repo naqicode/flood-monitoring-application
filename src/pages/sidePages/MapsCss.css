@@ -1,7 +1,14 @@
 /* Styling for Modal Header */
 
+.modal{
+  position: fixed;
+  top: 150px;
+}
+
+
+
 .modal-header {
-    background-color: #f8f9fa;
+    background-color: red;
     border-bottom: 1px solid #dee2e6;
     color: #343a40;
   }
@@ -11,11 +18,13 @@
     font-size: 1.2rem;
     font-weight: bold;
     margin: 0;
+    color: white;
   }
   
   /* Styling for Modal Body */
   .modal-body {
     padding: 1rem;
+
   }
   
   /* Styling for the div inside Modal Body */
