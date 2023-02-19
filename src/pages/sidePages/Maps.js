@@ -1,7 +1,13 @@
-import React from 'react'
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"; //Import Map components
+import React, { useState } from 'react'
+import { MapContainer, TileLayer, Marker } from "react-leaflet"; //Import Map components
 import "leaflet/dist/leaflet.css";
 import L from 'leaflet';
+
+//NEW ADDED
+import { Modal } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './MapsCss.css'
+
 
 
 const markerIcon = L.icon({
@@ -22,6 +28,18 @@ const englandPos = [52.90330510839568, -1.1862272800848968];
 function Maps(props) {
   const { markerPosition, town, riverName, RLOIid, catchmentName, dateOpened, easting,
           label, northing, notation, stationReference, status, wiskiID  } = props;
+
+
+
+    //ADDED NEW 
+    const [showModal, setShowModal] = useState(false);
+    const handleClose = () => setShowModal(false);
+    const handleShow = () => setShowModal(true);
+
+
+
+
+  
 
   return (
       
@@ -46,9 +64,21 @@ function Maps(props) {
           <Marker 
             position={markerPosition || [52.90330510839568, -1.1862272800848968]}
             icon={markerIcon}
+
+            //ADDED NEW
+            eventHandlers={{
+              click: () => handleShow()
+            }}
           >
-            <Popup>
-              <div>
+
+           
+        <Modal show={showModal} onHide={handleClose} >
+          <Modal.Header closeButton>
+            <Modal.Title>Marker Info</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div>
+
               <h3>{markerPosition}</h3>
               <h3>{town}</h3>
               <h3>{riverName}</h3>
@@ -63,8 +93,13 @@ function Maps(props) {
               <h3>{status}</h3>
               <h3>{wiskiID}</h3>
 
+
               </div>
-            </Popup>
+          </Modal.Body>
+        </Modal>
+
+            
+
           </Marker>
         )}
 
