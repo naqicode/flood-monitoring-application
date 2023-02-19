@@ -50,7 +50,7 @@ function SearchBox(props) {
 
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column'}}>
+    <div style={{ display: 'flex', flexDirection: 'column', position: 'relative', top: '10px'}}>
       <div style={{ display: 'flex'}}>
       <div style={{ flex: 1}}>
         <OutlinedInput 
@@ -76,7 +76,7 @@ function SearchBox(props) {
       <div>
       <List component="nav" aria-label="main mailbox folders">
           {stations.map((station) => (
-            <ListItem button key={station.label} onClick={() => handleListItemClick(station)}>
+            <ListItem style={{backgroundColor: 'lightblue', marginBottom: '10px'}} button key={station.label} onClick={() => handleListItemClick(station)}>
               <ListItemIcon>
                 <img 
                   src='./newIcon.png'

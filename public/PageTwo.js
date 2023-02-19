@@ -80,7 +80,7 @@ function PageTwo() {
       flexDirection: 'row',
     }}>
       
-      <div style={{ boxShadow: '0px 0px 20px 2px rgba(0, 0, 0, 0.3)',  width: '70vw' }}>
+      <div style={{ width: '70vw' }}>
         <Maps markerPosition={markerPosition}
               town={town}
               riverName={riverName}

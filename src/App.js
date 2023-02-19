@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import PageOne from './pages/PageOne';
 import PageTwo from './pages/PageTwo';
 import PageThree from './pages/PageThree';
+import Footer from './pages/Footer';
 
 
 
@@ -24,6 +25,7 @@ function App() {
             <Route path='PageTwo' element={<PageTwo />} />
             <Route path='PageThree' element={<PageThree />} />
           </Routes>
+            <Footer />
         </Router>
      </React.StrictMode>
      
