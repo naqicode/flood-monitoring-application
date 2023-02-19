@@ -34,6 +34,18 @@ function SearchBox(props) {
   const handleListItemClick = (station) => {
     console.log(station);
     props.onStationSelect(station);
+    props.handleTown(station)
+    props.handleRiver(station)
+    props.handleRLOIid(station)
+    props.handleCatchmentName(station)
+    props.handleDateOpened(station)
+    props.handleEasting(station)
+    props.handleLabel(station)
+    props.handleNorthing(station)
+    props.handleNotation(station)
+    props.handleStationReference(station)
+    props.handleStatus(station)
+    props.handleWiskiID(station)
   }
 
 

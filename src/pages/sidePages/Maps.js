@@ -20,7 +20,8 @@ const englandPos = [52.90330510839568, -1.1862272800848968];
 
 
 function Maps(props) {
-  const { markerPosition } = props;
+  const { markerPosition, town, riverName, RLOIid, catchmentName, dateOpened, easting,
+          label, northing, notation, stationReference, status, wiskiID  } = props;
 
   return (
       
@@ -47,7 +48,22 @@ function Maps(props) {
             icon={markerIcon}
           >
             <Popup>
-              ahahahah mate
+              <div>
+              <h3>{markerPosition}</h3>
+              <h3>{town}</h3>
+              <h3>{riverName}</h3>
+              <h3>{RLOIid}</h3>
+              <h3>{catchmentName}</h3>
+              <h3>{dateOpened}</h3>
+              <h3>{easting}</h3>
+              <h3>{label}</h3>
+              <h3>{northing}</h3>
+              <h3>{notation}</h3>
+              <h3>{stationReference}</h3>
+              <h3>{status}</h3>
+              <h3>{wiskiID}</h3>
+
+              </div>
             </Popup>
           </Marker>
         )}
