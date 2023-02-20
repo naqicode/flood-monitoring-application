@@ -6,8 +6,9 @@ function Footer() {
         <footer style={{ 
             backgroundColor: '#343a40',
             color: '#fff', 
-            padding: '11px',
+            padding: '10px',
             boxShadow: '0px 0px 10px 2px rgba(0, 0, 0, 0.3)',
+            
 
             }}
         >
