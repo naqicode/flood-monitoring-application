@@ -22,7 +22,7 @@ function PageOne() {
           zoom={6}
           scrollWheelZoom={true}
           style={{
-            width: '70vw',
+            width: '100vw',
             height: '85vh',
           }}
         >
@@ -48,11 +48,7 @@ function PageOne() {
         </MapContainer>
       </div>
 
-      
-      
-      <div>
-        <h1>Warnings here</h1>
-      </div>
+
       
     </div>
   )
