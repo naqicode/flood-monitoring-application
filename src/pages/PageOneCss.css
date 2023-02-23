@@ -1,0 +1,61 @@
+/* Styling for Modal Header */
+
+.modal{
+    position: fixed;
+    top: 150px;
+  }
+  
+  
+  
+  .modal-header {
+      background-color: red;
+      border-bottom: 1px solid #dee2e6;
+      color: #343a40;
+    }
+    
+    /* Styling for Modal Title */
+    .modal-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0;
+      color: white;
+    }
+    
+    /* Styling for Modal Body */
+    .modal-body {
+      padding: 1rem;
+  
+    }
+    
+    /* Styling for the div inside Modal Body */
+    .modal-body div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    /* Styling for the h3 elements inside the div */
+    .modal-body div h3 {
+      font-size: 1rem;
+      margin: 0;
+      flex-basis: 50%;
+    }
+    
+    /* Styling for the close button */
+    .modal-header button.close {
+      padding: 0.5rem;
+    }
+    
+    /* Styling for the close icon */
+    .modal-header button.close span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    /* Styling for the background overlay */
+    .modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  
+  
+  
