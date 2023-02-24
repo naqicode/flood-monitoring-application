@@ -68,19 +68,12 @@ function PageOne() {
 
 
 
-
-
-
-
-
-
-
-
-
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
 
-      <div style={{width: '70vw', boxShadow: '0px 0px 20px 2px rgba(0, 0, 0, 0.3)'}}>
+      <div>
+
+
         <MapContainer
           center={englandPos}
           zoom={6}
@@ -88,32 +81,19 @@ function PageOne() {
           style={{
             width: '100vw',
             height: '85vh',
+            position: 'relative',
           }}
         >
+
+
 
           <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=Nmi7XJ7V5CNH8umtJfFQ"
           />
 
-          {/* <Marker
-            position={englandPos}
-            icon={
-              new Icon({
-                iconUrl: markerIconPng,
-                iconSize: [10, 20],
-                iconAnchor: [12, 41],
-              })
-            }
-          >
-            <Popup>
-              <h1>Hi</h1>
-            </Popup>
-
-          </Marker> */}
           {countyList && countyList.map((element, index) => (
             <Marker
-
             key={index}
               position={[element.lat, element.long]}
               icon={
@@ -123,101 +103,79 @@ function PageOne() {
                 iconAnchor: [12, 41],
               })
             }
-
             //MODAL
             eventHandlers={{
               click: () => handleShow()
             }}
             >
-
-
-
-<Popup
-  latitude={element.lat}
-  longitude={element.long}
-  onClose={() => setShowModal(false)}
-  closeOnClick={false}
-  dynamicPosition={true}
->
-  <div onClick={() => setShowModal(true)}>
-    <h6>{element.riverOrSea}</h6>
-  </div>
-  <Modal show={showModal} onHide={() => setShowModal(false)}>
-    <Modal.Header closeButton>
-      <Modal.Title>Marker Info</Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
-      <div>
-        <h4>{element.lat}</h4>
-        <h4>{element.long}</h4>
-        <h4>{element.county}</h4>
-        <h4>{element.description}</h4>
-        <h4>{element.eaAreaName}</h4>
-        <h4>{element.floodWatchArea}</h4>
-        <h4>{element.fwdCode}</h4>
-        <h4>{element.label}</h4>
-        <h4>{element.notation}</h4>
-        <h4>{element.quickDialNumber}</h4>
-        <h4>{element.riverOrSea}</h4>
-      </div>
-    </Modal.Body>
-  </Modal>
-</Popup>
-
-
-
-            {/* <Modal show={showModal} onHide={handleClose} >
-              <Modal.Header closeButton>
-                <Modal.Title>Marker Info</Modal.Title>
-                  </Modal.Header>
-                    <Modal.Body>
-                    <div>
-
-                    <h4>{element.lat}</h4>
-                    <h4>{element.long}</h4>
-                    <h4>{element.county}</h4>
-                    <h4>{element.description}</h4>
-                    <h4>{element.eaAreaName}</h4>
-                    <h4>{element.floodWatchArea}</h4>
-                    <h4>{element.fwdCode}</h4>
-                    <h4>{element.label}</h4>
-                    <h4>{element.notation}</h4>
-                    <h4>{element.quickDialNumber}</h4>
-                    <h4>{element.riverOrSea}</h4>
-
-                    </div>
-                   
-                  </Modal.Body>
-                </Modal> */}
-
-
-              {/* <Popup
-                key={index}
+              <Popup
+                latitude={element.lat}
+                longitude={element.long}
+                onClose={() => setShowModal(false)}
+                closeOnClick={false}
+                dynamicPosition={true}
               >
-              <h4>{element.lat}</h4>
-              <h4>{element.long}</h4>
-              <h4>{element.county}</h4>
-              <h4>{element.description}</h4>
-              <h4>{element.eaAreaName}</h4>
-              <h4>{element.floodWatchArea}</h4>
-              <h4>{element.fwdCode}</h4>
-              <h4>{element.label}</h4>
-              <h4>{element.notation}</h4>
-              <h4>{element.quickDialNumber}</h4>
-              <h4>{element.riverOrSea}</h4>
-            </Popup> */}
+                <div onClick={() => setShowModal(true)}>
+                  <h6>{element.riverOrSea}</h6>
+                </div>
+                <Modal show={showModal} onHide={() => setShowModal(false)}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Marker Info</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <div>
+                      <h4>Lat: {element.lat}</h4>
+                      <h4>Long: {element.long}</h4>
+                      <h4>County: {element.county}</h4>
+                      <h4>Description: {element.description}</h4>
+                      <h4>eaAreaName: {element.eaAreaName}</h4>
+                      <h4>fwdCode: {element.fwdCode}</h4>
+                      <h4>Label: {element.label}</h4>
+                      <h4>Notation: {element.notation}</h4>
+                      <h4>Quick dial number: {element.quickDialNumber}</h4>
+                      <h4>River or Sea: {element.riverOrSea}</h4>
+                    </div>
+                  </Modal.Body>
+                </Modal>
+              </Popup>
 
             </Marker>
           ))}
+
+
+
+
+
+
+
+            {/* PANE */}
+            
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           
         </MapContainer>
       </div>
 
 
-
-
-
-      
     </div>
   )
 }
