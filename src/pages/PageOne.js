@@ -72,6 +72,7 @@ function PageOne() {
 
 
 
+
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
 
@@ -154,58 +155,6 @@ function PageOne() {
 
             {/* PANE */}
             
-
-
-
-
-            <div
-              style={{
-                position: 'absolute',
-
-                top: 0,
-                right: '20px',
-                width: '25%',
-                height: '80%',
-                backgroundColor: 'white',
-                padding: '10px',
-                borderRadius: '10px',
-                boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
-                zIndex: 9999 // or any high value
-              }}
-            >
-              <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>Some Text Here</p>
-
-
-
-              {/* CHANGE THIS SO USER CAN CHOOSE THE COUNTY AND THEN A LIST OF THAT
-              COUNTY WILL BE DISPLAYED AT THE BOTTOM */}
-              <label for="cars">Choose a car:</label>
-                <select id="cars">
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="vw">VW</option>
-                  <option value="audi" selected>Audi</option>
-                </select>
-
-              
-
-            </div>
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
