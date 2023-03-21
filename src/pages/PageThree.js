@@ -17,6 +17,8 @@ function PageThree() {
 //ADDED
 const [warningData, setWarningData] = useState('');
 
+const [selectedWarning, setSelectedWarning] = useState(null); //added new
+
 
 
 //ADDED
@@ -41,14 +43,18 @@ useEffect(() => {
 }, [warningData]);
 
 
+//added new
+const handleClick = (warning) => {
+  setSelectedWarning(warning);
+};
 
 
 //AADED
-const handleClick = () => {
-  warningData.map((e) => {
-    console.log(e.floodArea.riverOrSea)
-  })
-}
+// const handleClick = () => {
+//   warningData.map((e) => {
+//     console.log(e.floodArea.riverOrSea)
+//   })
+// }
 
 
 
@@ -61,32 +67,20 @@ const handleClick = () => {
 
 
 
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'flex-start',
-        marginLeft: 0,
-        marginTop: 0,
-        marginRight: 0,
-        marginBottom: '20px',
-        paddingLeft: '30px',
-      }}
-    >
-          <div
-            style={{
-              height: '75vh',
-              backgroundColor: 'lightBlue',
-              width: '20vw',
-              overflow: 'auto',
-              
-              
-            }}
-          >
 
+      <div className="warning-list-container"
+        style={{
+          overflowY: 'scroll',
+          maxHeight: '745px',
+          border: '1px solid red',
+          paddingBottom: '10px',
+          width: '25vw'
+        }}
+      >
 
           {/* ADDED NEW */}
 
-          <ul style={{ listStyleType: 'none', padding: 0, margin: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+          <ul className="warning-list" style={{ listStyleType: 'none', padding: 0, margin: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <h3>Alerts</h3>
 
             {warningData &&
@@ -94,19 +88,83 @@ const handleClick = () => {
             .sort((a, b) => new Date(b.timeRaised) - new Date(a.timeRaised))
             .map((ele, index) => (
               <li style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}} key={index}>
-                <button onClick={handleClick} style={{ borderRadius: '30px', fontSize: '20px', padding: '20px', width: '200px', margin: '10px' }}>{ele.timeRaised}</button>
+                <button 
+                  onClick={() => handleClick(ele)}
+                  
+                  style={{ 
+                    borderRadius: '30px',
+                    fontSize: '20px',
+                    padding: '20px', 
+                    width: '200px', 
+                    margin: '10px' 
+                    }}>
+                    {ele.timeRaised}
+                </button>
               </li>
             ))}
 
-
           </ul>
+        
+      </div>
+
+      <div className="warning-details-container"
+        style={{
+          border: '1px solid red',
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'inherit',
+          width: '50vw',
+          position: 'fixed',
+          top: '200px',
+          right: '200px'
+
+          
+         }}
+        >
+      {selectedWarning && (
+          <div className="warning-details"
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+              alignItems: 'flex-start',
+              flexDirection: 'column'
+              
+
+            }}
+
+          >
+            <h3>Warning Details</h3>
+            <p>ID: {selectedWarning.id}</p>
+            <p>Description: {selectedWarning.description}</p>
+            <p>EA Area Name: {selectedWarning.eaAreaName}</p>
+            <p>EA Region Name: {selectedWarning.eaRegionName}</p>
+            <p>Flood Area County: {selectedWarning.floodArea.county}</p>
+            <p>Flood Notation: {selectedWarning.floodArea.notation}</p>
+            <p>River or Sea: {selectedWarning.floodArea.riverOrSea}</p>
+            <p>Flood Area ID: {selectedWarning.floodAreaID}</p>
+            <p>Is it Tidal: {selectedWarning.isTidal}</p>
+            <p>Message: {selectedWarning.message}</p>
+            <p>Severity: {selectedWarning.severity}</p>
+            <p>Severity Level: {selectedWarning.severityLevel}</p>
+            <p>Time Message Changed: {selectedWarning.timeMessageChanged}</p>
+            <p>Time Message Raised: {selectedWarning.timeRaised}</p>
+            <p>Time SeverityChanged: {selectedWarning.timeSeverityChanged}</p>
+
+            </div>
+      )}
+      </div>
 
 
-          </div>
-
-    </div>
 
 
+
+  
+
+
+
+
+
+            
 
 
 
