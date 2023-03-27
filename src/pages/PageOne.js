@@ -1,14 +1,17 @@
-//Importing 
-import React, {useEffect, useState}from 'react'
+import React, {useEffect, useState}from 'react' //Importing 'React' library and functions such as 'useState' and 'useEffect
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"; //Import Map components
-import markerIconPng from "leaflet/dist/images/marker-icon.png";
-import "leaflet/dist/leaflet.css";
-import { Icon } from "leaflet";
-import './PageOneCss.css';
-import api from '../api/api';
+import markerIconPng from "leaflet/dist/images/marker-icon.png"; //Importing marker
+import "leaflet/dist/leaflet.css"; // Import the CSS file for Leaflet's default styles.
+import { Icon } from "leaflet"; //Import the Icon class from the Leaflet library.
+import './PageOneCss.css'; // Import the css file
+import api from '../api/api'; // Import the api file
+// Importing 'useSelector' and 'useDispatch' hooks from react redux to interact with the redux store.
+// 'useDispatch' hook is used to dispatch an action to update the state in the store.
+// 'useSelector' hook is used to retrieve the updated state and display it on speicifc component
 import { useDispatch, useSelector } from 'react-redux';
+// importing the 'addCounty' and 'addFloodWarning' functions.
 import {addCounty, addFloodWarning} from '../redux/floodAreaSlice'
-
+// importing the 'selectorCountyList' and 'selectorFloodWarning' functions.
 import {selectorCountyList, selectorFloodWarning} from '../redux/floodAreaSlice'
 
 
@@ -36,24 +39,21 @@ function PageOne() {
 
 
 
-
+  // Declared a dispatch var that is initialized to the value of useDispatch() hook
   const dispatch = useDispatch()
-
+  // Declared a 'countyList' var where its initialized to the value of useSelector hook.
   const countyList = useSelector(selectorCountyList)
-
+  // Declared a 'floodData' var where its initialized to the value of useSelector hook.
   const floodData = useSelector(selectorFloodWarning)
 
+  //
   useEffect(() => {
     async function runApiCall() {
       const resp = await api.counties.getFloodmonitoring();
       if (resp) {
-        // 1. Destructure resp.items {lat, lng }
-        // const latandLngOfEachCounty = resp.map((element) => {  
-        // })
-        // 2. replace resp.item with latandlngofeachCounty
+
         dispatch(addCounty(resp.items))
 
-        // console.log(resp.items)
       }
     }
     runApiCall()
