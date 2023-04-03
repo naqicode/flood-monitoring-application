@@ -1,0 +1,9 @@
+.para-head {
+    display: 'flex';
+    flex-direction: 'column';
+    align-items: 'flex-start';
+    margin-bottom: '10px';
+    background-color: 'rgba(242, 36, 36, 0.3)';
+    padding: '10px';
+    border-radius: '10px';
+}
