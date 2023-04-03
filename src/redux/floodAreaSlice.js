@@ -19,7 +19,7 @@ const floodAreaSlice = createSlice({
     addCounty(state, action) {
       state.county = action.payload; // The result of action.payload is set to state.county
     },
-    addFloodWarning (state, action) 
+    addFloodWarning(state, action) 
     {
         state.currentSelectedCounty = action.payload
     }
