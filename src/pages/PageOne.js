@@ -130,16 +130,46 @@ function PageOne() {
                   </Modal.Header>
                   <Modal.Body>
                     <div>
-                      <h4>Lat: {element.lat}</h4>
-                      <h4>Long: {element.long}</h4>
-                      <h4>County: {element.county}</h4>
-                      <h4>Description: {element.description}</h4>
-                      <h4>eaAreaName: {element.eaAreaName}</h4>
-                      <h4>fwdCode: {element.fwdCode}</h4>
-                      <h4>Label: {element.label}</h4>
-                      <h4>Notation: {element.notation}</h4>
-                      <h4>Quick dial number: {element.quickDialNumber}</h4>
-                      <h4>River or Sea: {element.riverOrSea}</h4>
+                      <div>
+                      <h6 style={{fontWeight: 'bold'}}>Lat:</h6>
+                      <h6>{element.lat}</h6>
+                      </div>
+                      <div>
+                      <h6 style={{fontWeight: 'bold'}}>Long:</h6>
+                      <h6>{element.long}</h6>
+                      </div>
+                      <div>
+                      <h6 style={{fontWeight: 'bold'}}>County:</h6>
+                      <h6>{element.county}</h6>
+                      </div>
+                      <div>
+                      <h6 style={{fontWeight: 'bold'}}>Description:</h6>
+                      <h6>{element.description}</h6>
+                      </div>
+                      <div>
+                      <h6 style={{fontWeight: 'bold'}}>eaAreaName:</h6>
+                      <h6>{element.eaAreaName}</h6>
+                      </div>
+                      <div>
+                      <h6 style={{fontWeight: 'bold'}}>fwdCode:</h6>
+                      <h6>{element.fwdCode}</h6>
+                      </div>
+                      <div>
+                      <h6 style={{fontWeight: 'bold'}}>Label:</h6>
+                      <h6>{element.label}</h6>
+                      </div>
+                      <div>
+                      <h6 style={{fontWeight: 'bold'}}>Notation:</h6>
+                      <h6>{element.notation}</h6>
+                      </div>
+                      <div>
+                      <h6 style={{fontWeight: 'bold'}}>Quick dial number:</h6>
+                      <h6>{element.quickDialNumber}</h6>
+                      </div>
+                      <div>
+                      <h6 style={{fontWeight: 'bold'}}>River or Sea:</h6>
+                      <h6>{element.riverOrSea}</h6>
+                      </div>
                     </div>
                   </Modal.Body>
                 </Modal>

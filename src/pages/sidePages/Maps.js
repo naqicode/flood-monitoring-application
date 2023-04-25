@@ -78,21 +78,59 @@ function Maps(props) {
             <Modal.Title>Marker Info</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div>
-
-              <h3>{markerPosition}</h3>
-              <h3>{town}</h3>
-              <h3>{riverName}</h3>
-              <h3>{RLOIid}</h3>
-              <h3>{catchmentName}</h3>
-              <h3>{dateOpened}</h3>
-              <h3>{easting}</h3>
-              <h3>{label}</h3>
-              <h3>{northing}</h3>
-              <h3>{notation}</h3>
-              <h3>{stationReference}</h3>
-              <h3>{status}</h3>
-              <h3>{wiskiID}</h3>
+            <div style={{display: 'flex', flexDirection: 'column'}}>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Long & Lat:</h6>
+                <h6>{markerPosition}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Town:</h6>
+                <h6>{town}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>River Name:</h6>
+                <h6>{riverName}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>RLO ID:</h6>
+                <h6>{RLOIid}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Catchment Name:</h6>
+                <h6>{catchmentName}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Date Opened:</h6>
+                <h6>{dateOpened}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Easting:</h6>
+                <h6>{easting}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Label</h6>
+                <h6>{label}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Northing</h6>
+                <h6>{northing}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Notation:</h6>
+                <h6>{notation}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Station Reference:</h6>
+                <h6>{stationReference}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Status:</h6>
+                <h6>{status}</h6>
+              </div>
+              <div>
+                <h6 style={{fontWeight: 'bold'}}>Wiski ID:</h6>
+                <h6>{wiskiID}</h6>
+              </div>
 
 
               </div>

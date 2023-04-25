@@ -54,10 +54,8 @@ const handleClick = (warning) => {
 
   return (
     <div>
-      <h1>HJIDKODKD</h1>
 
-      SO BASICALLY - TRY TO USE MAP THE POLYGON OF THIS API "https://environment.data.gov.uk/flood-monitoring/id/floods".
-      WHICH THEN SHOULD GIVE OUT LAT AND LONG OF THOSE AREAS WITH WARNING.
+      
 
 
     <div
@@ -69,7 +67,7 @@ const handleClick = (warning) => {
         style={{
           listStyle: 'none',
           overflowY: 'scroll',
-          maxHeight: '75vh',
+          maxHeight: '83.5vh',
           maxWidth: '25vw',
           paddingRight: '20px'
         }}
@@ -78,7 +76,8 @@ const handleClick = (warning) => {
           style={{
             fontSize: '2em',
             textAlign: 'center',
-            marginBottom: '1em'
+            marginBottom: '1em',
+            fontWeight: 'bold',
           }}
         >ALERTS</h3>
         {warningData &&
@@ -149,7 +148,7 @@ const handleClick = (warning) => {
           }}
           >
             <h3 style={{ 
-              color: '#e53935',
+              color: 'black',
               textAlign: 'center',
               fontSize: '24px',
               fontWeight: 'bold',
